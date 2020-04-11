@@ -571,6 +571,15 @@ button:hover {
         order: 2;
     }
 
+    .food-name {
+        font-size: 14px;
+    }
+
+    .food-price,
+    .modal-pricetag {
+        font-size: 16px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -613,5 +622,57 @@ button:hover {
 
     .footer-link:not(:last-child) {
         margin-right: 0;
+    }
+
+    .modal-body {
+        margin-bottom: 25px;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+    }
+
+    .modal-pricetag {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .modal-header {
+        margin-bottom: 25px;
+    }
+
+    .modal-body {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .food-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .food-name {
+        width: 100%;
+        text-align: center;
+    }
+
+    .food-price {
+        margin: 0 10px 0 0;
+    }
+
+    .footer-buttons {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .footer-buttons button {
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .footer-buttons .button-primary {
+        margin-bottom: 10px;
     }
 }
