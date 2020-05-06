@@ -30,11 +30,12 @@ const cardsMenu = document.querySelector('.cards-menu');
 
 let login = localStorage.getItem("gloDelivery");
 
+// ПОЯВЛЕНИЕ ОКНА КОРЗИНЫ
 function toggleModal() {
     modal.classList.toggle("is-open");
     modal_dialog.classList.toggle("dialog-open");
 }
-
+// ПОЯВЛЕНИЕ ОКНА АВТОРИЗАЦИИ
 function toogleModalAuth() {
     modalAuth.classList.toggle("is-open");
     modal_dialog_auth.classList.toggle("dialog-open");
@@ -86,7 +87,7 @@ function notAutorized() {
     closeAuth.addEventListener("click", toogleModalAuth);
     logInForm.addEventListener("submit", logIn);
 }
-
+// ПРОВЕРКА АВОРИЗОВАН ЛИ ПОЛЬЗОВАТЕЛЬ
 function checkAuth() {
     if (login) {
         autorized();
@@ -94,7 +95,7 @@ function checkAuth() {
         notAutorized();
     }
 }
-
+// СОЗДАНИЕ КАРТОЧКИ РЕСТОРАНА
 function createCardRestaurant() {
     const card = `
     <a class="card card-restaurant wow fadeInUp" data-wow-delay="0.3s">
@@ -115,7 +116,7 @@ function createCardRestaurant() {
 
     cardsRestaurants.insertAdjacentHTML('beforeend', card);
 }
-
+// СОЗДАНИЕ КАРТОЧКИ ТОВАРА
 function createCardGood() {
     const card = document.createElement('div');
     card.className = 'card';
@@ -143,7 +144,7 @@ function createCardGood() {
 
     cardsMenu.insertAdjacentElement('beforeend', card);
 }
-
+// ОТКРЫТИЕ РЕСТОРАНА
 function openGoods(event) {
     const target = event.target;
 
