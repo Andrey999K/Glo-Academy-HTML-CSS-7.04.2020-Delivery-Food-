@@ -148,17 +148,22 @@ function openGoods(event) {
     const target = event.target;
 
     const restaurant = target.closest('.card-restaurant');
-    if (restaurant) {
-        cardsMenu.textContent = '';
-        containerPromo.classList.add('hide');
-        restaurants.classList.add('hide');
-        menu.classList.remove('hide');
 
-        createCardGood();
-        createCardGood();
-        createCardGood();
+    // ЕСЛИ НЕ АВТОРИЗОВАН, ТО ОТКРЫВАЕТСЯ ОКНО АВТОРИЗАЦИИ
+    if (login) {
+        if (restaurant) {
+            cardsMenu.textContent = '';
+            containerPromo.classList.add('hide');
+            restaurants.classList.add('hide');
+            menu.classList.remove('hide');
+
+            createCardGood();
+            createCardGood();
+            createCardGood();
+        }
+    } else {
+        toogleModalAuth();
     }
-
 }
 
 cartButton.addEventListener("click", toggleModal);
