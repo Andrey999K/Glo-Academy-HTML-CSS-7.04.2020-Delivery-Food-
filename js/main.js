@@ -37,7 +37,12 @@ const buttonClearCart = document.querySelector(".clear-cart");
 
 let login = localStorage.getItem("gloDelivery");
 
-const cart = [];
+const cart = JSON.parse(localStorage.getItem("gloDeliveryCart")) || [];
+console.log(cart);
+
+const saveCart = function () {
+  localStorage.setItem("gloDeliveryCart", JSON.stringify(cart));
+};
 
 const getData = async function (url) {
   const response = await fetch(url);
@@ -248,6 +253,7 @@ function addToCart(event) {
       });
     }
   }
+  saveCart();
 }
 
 function renderCart() {
@@ -292,6 +298,7 @@ function changeCount(event) {
     if (target.classList.contains("counter-plus")) food.count++;
     renderCart();
   }
+  saveCart();
 }
 
 function init() {
